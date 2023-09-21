@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+    stages {
+        stage("Clean Up"){
+            steps{
+                deleteDir()
+            }
+        }
+        stage("Build"){
+            steps{
+                    sh "mvn -B -DskipTests clean package"
+            }
+        }
+        stage("Test"){
+            steps{
+                    sh "mvn test"   
+            }
+        }
+        stage("CI"){
+            steps{
+                echo "CI has been completed"
+            }
+        }
+    }
+}
