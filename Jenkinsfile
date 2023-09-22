@@ -8,6 +8,8 @@ pipeline {
         }
         stage("Build"){
             steps{
+                    sh "pwd"
+                    sh "ls -alrt"
                     sh "mvn clean install"    
             }
         }
