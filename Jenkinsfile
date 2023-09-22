@@ -8,9 +8,7 @@ pipeline {
         }
         stage("Build"){
             steps{
-                   dir("Calculator-javaProject"){
-                    sh "mvn clean install"
-                   }
+                    sh "mvn clean install"    
             }
         }
         stage("Test"){
